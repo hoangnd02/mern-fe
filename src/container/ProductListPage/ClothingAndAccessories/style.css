@@ -1,0 +1,49 @@
+.caContainer{
+    width: 250px;
+}
+.caImgContainer{
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.caImgContainer > img{
+    width: 160px;
+}
+.caProductName{
+    font-size: 12px;
+    padding: 10px 0;
+}
+.caProductPrice{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Filters */
+.filters {
+    max-width: 20%;
+}
+.filters-products {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+.card-filter {
+    padding: 20px;
+}
+
+/* React-range customize */
+.card div div div div {
+    height: 14px !important;
+    width: 14px !important;
+    border-radius: 100px !important;
+    outline: none;
+    background-color: #ccc;
+    box-shadow: none !important;
+}
+.card div div {
+    height: 4px !important;
+}

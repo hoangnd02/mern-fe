@@ -1,0 +1,188 @@
+/* Review and Comment */
+.comment {
+    border: 1px solid #f0f0f0;
+    margin-top: 24px;
+    padding: 24px;
+ } 
+ .comment_title {
+     display: flex;
+     justify-content: space-between;
+ }
+ .comment_title-left {
+    font-size: 26px;
+    font-weight: 600;
+    width: 33%;
+    text-align: center;
+ }
+ .comment_title-right {
+     border: none;
+     background-color:#2874f0 ;
+     color: #fff;
+     flex: 1;
+    justify-content: flex-end;
+ }
+ .reviews {
+     border-top: 1px solid #f0f0f0;
+ }
+ .reviews_item {
+     margin-bottom: 24px;
+ }
+ .reviews_item-comment {
+     margin-left: 20px;
+ }
+ .reviews_item-top {
+     display: flex;
+ }
+ .reviews_item-bot,
+ .reviews_item-bottom {
+     margin-top: 10px;
+     position: relative;
+ }
+.reviews {
+    padding: 24px 0;
+    padding-bottom: 0px;
+}
+.reviews_item-name {
+    display: flex;
+}
+.reviews_item-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.reviews_item-time {
+    margin-left: 10px;
+}
+.item-bottom {
+    display: flex;
+}
+.reviews_item-img {
+    margin-top: 10px;
+}
+.reviews_item-img img {
+    width: 62px;
+}
+.reviews_item-vote {
+    display: flex;
+    align-items: center;
+    margin-right: 14px;
+}
+
+.rating {
+    display: flex;
+    font-family: Arial,sans-serif;
+    margin: 20px 0;
+}
+.rating-star {
+    width: 33%;
+    text-align: center;
+}
+.rating-counts {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.rating-star1 {
+    font-size: 32px;
+
+}
+.rating-star2 {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #878787;
+    padding-left: 4px;
+}
+.rating-count {
+    display: flex;
+    /* margin-bottom: 4px; */
+    align-items: center;
+    position: relative;
+    margin-left: 20px;
+    line-height: 20px;
+}
+.rating-count-width-span {
+    background-color: #388e3c;
+    height: 5px;
+    position: absolute;
+}
+.rating-count-width { 
+    width: 220px;
+    content: '';
+    display: block;
+    position: relative;
+    background-color: #ccc;
+    height: 5px;
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.input-cmt {
+    outline: none;
+    border-radius: 20px;
+    font-size: 15px;
+    width: 90%;
+}
+
+.send {
+    position: absolute;
+    top: 8px;
+    right: 54px;
+    outline: none;
+    border: none;
+    background-color: #f7f7f7;
+}
+
+/* Heart Animation */
+.heart {
+    width: 15px;
+    height: 15px;
+    background: #bdbdbd;
+    transform: rotate(45deg);
+    /* margin: 200px auto; */
+    margin-right: 10px;
+  }
+  .heart:hover {
+    animation-name: beat;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    background: red;
+    box-shadow: 0 0 15px red, inset 0 0 5px 15px red;
+  }
+  .heart:hover:before,
+  .heart:hover:after {
+    background-color: red;
+  }
+  .heart:before,
+  .heart:after {
+    content: " ";
+    background-color: #bdbdbd;
+    border-radius: 50%;
+    height: 15px;
+    position: absolute;
+    width: 15px;
+  }
+  .heart:before {
+    top: -7.5px;
+    left: 0;
+  }
+  .heart:after {
+    left: -7.5px;
+    top: 0;
+  }
+
+  @keyframes beat {
+    0% {
+      transform: rotate(45deg) scale(1, 1);
+    }
+    /* 25% {
+      transform: rotate(45deg) scale(0.8, 0.8);
+    } */
+    50% {
+      transform: rotate(45deg) scale(1.7, 1.7);
+    }
+    100% {
+      transform: rotate(45deg) scale(1, 1);
+    }
+  }
+

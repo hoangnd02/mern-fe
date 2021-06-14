@@ -1,0 +1,8 @@
+.cartContainer{
+    display: flex;
+    /* max-width: 1260px; */
+    background-color: #f1f3f6;
+    padding: 15px ;
+    justify-content: space-between;
+    margin: 0;
+}

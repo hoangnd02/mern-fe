@@ -1,0 +1,7 @@
+.wrapper{
+    position: relative;
+    top: 56px;
+    background-color: #f1f3f6;
+    width: 100%;
+    overflow: hidden;
+}
