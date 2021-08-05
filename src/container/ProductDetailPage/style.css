@@ -192,6 +192,9 @@
     .sticky {
         display: none
     }
+    .productDetails {
+        margin: 0 !important;
+    }
 } 
 
 /* Tablet */

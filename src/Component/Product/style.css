@@ -43,7 +43,6 @@
         display: flex;
         flex-direction: column;
         margin: auto;
-
     }
     .productInfo-title {
         padding: 0 !important;
@@ -65,5 +64,10 @@
     .productInfo-title {
         font-size: 15px;
     }
-    
+  }
+
+  .bg-img {
+      height: 400px;
+      width: 400px;
+      background-color: orangered;
   }

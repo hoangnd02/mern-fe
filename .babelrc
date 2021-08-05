@@ -1,0 +1,42 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime",
+    [
+      "prismjs",
+      {
+        "languages": [
+          "javascript",
+          "css",
+          "markup",
+          "cpp",
+          "bash",
+          "docker",
+          "go",
+          "json",
+          "markdown",
+          "python",
+          "jsx",
+          "tsx",
+          "scss",
+          "typescript"
+        ],
+        "plugins": ["autolinker", "command-line"],
+        "theme": "default",
+        "css": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
+    }
+  }
+}

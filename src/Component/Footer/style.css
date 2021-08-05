@@ -1,0 +1,28 @@
+.footer {
+    background-color:  #172337;
+    height: 300px;
+    transform: translateY(56px);
+    padding-bottom: 10px;
+}
+.footer-top {
+    padding-top: 40px;
+    width: 90%;
+    font-size: 12px;
+    font-weight: 400px;
+    display: flex;
+    margin: auto;
+    color: #fff;
+}
+.footer-top p a {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+}
+.footer-top .title {
+    color: #878787;
+    font-size: 14px;
+}
+.social {
+    border-left: 1px solid #878787;
+}

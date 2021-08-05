@@ -8,6 +8,7 @@ const Card = (props) => {
       style={{
         margin: `${props.margin}`,
         fontSize: `${props.fontSize}`,
+        maxWidth: `${props.maxWidth}`
       }}
     >
       {(props.headerLeft || props.headerRight) && (
@@ -24,12 +25,21 @@ const Card = (props) => {
                 fontSize: "20px",
                 fontWeight: "500",
                 fontSize: `${props.fontSize}`,
+                cursor: "pointer",
               }}
             >
               {props.headerLeft}
             </div>
           )}
-          {props.headerRight && props.headerRight}
+          {props.headerRight && (
+            <div
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              {props.headerRight}
+            </div>
+          )}
         </div>
       )}
 

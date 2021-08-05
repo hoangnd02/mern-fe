@@ -161,7 +161,7 @@ const Comment = ({ comment, productId }) => {
                     outline: "none",
                     whiteSpace: "pre-wrap",
                     overflowWrap: "break-word",
-                    background: "#f7f7f7",
+                    background: "#fff",
                     padding: "10px 14px",
                     margin: "16px 0",
                   }}

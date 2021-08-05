@@ -8,20 +8,63 @@ import Button from "@material-ui/core/Button";
 import CloseIcon from "@material-ui/icons/Close";
 import StarIcon from "@material-ui/icons/Star";
 import { Range, getTrackBackground } from "react-range";
-// import { ResponsiveStream } from "@nivo/stream";
+import { ResponsiveStream } from "@nivo/stream";
 
 const ClothingAndAccessories = (props) => {
   const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
   // const [values, setValues] = useState([50]);
-  let data;
+  let data = [
+    {
+      oneStar: 1,
+      2: 4,
+      3: 1,
+      4: 9,
+      5: 8,
+    },
+    {
+      oneStar: 1,
+      2: 3,
+      3: 1,
+      4: 8,
+      5: 4,
+    },
+    {
+      oneStar: 4,
+      2: 8,
+      3: 6,
+      4: 6,
+      5: 4,
+    },
+    {
+      oneStar: 8,
+      2: 8,
+      3: 2,
+      4: 8,
+      5: 5,
+    },
+    {
+      oneStar: 7,
+      2: 9,
+      3: 9,
+      4: 9,
+      5: 8,
+    },
+    {
+      oneStar: 0,
+      2: 7,
+      3: 3,
+      4: 1,
+      5: 4,
+    },
+  ];
 
   // react-range
-  const STEP = 1;
+  const STEP = 1000;
   const MIN = 0;
-  const MAX = 100;
+  const MAX = 5000000;
   let rtl;
-  const [values, setValues] = React.useState([25, 75]);
+  const [values, setValues] = React.useState([MIN, MAX]);
 
   useEffect(() => {
     const { match } = props;
@@ -37,7 +80,12 @@ const ClothingAndAccessories = (props) => {
           margin={"0px"}
           fontSize={"14px"}
         ></Card>
-        <Card headerLeft={"CATEGORIES"} margin={"0px"} fontSize={"14px"}>
+        <Card
+          headerLeft={"CATEGORIES"}
+          headerRight={"CLEAR"}
+          margin={"0px"}
+          fontSize={"14px"}
+        >
           <div className="card-filter">
             <Button variant="contained">
               Pepsi{" "}
@@ -72,91 +120,93 @@ const ClothingAndAccessories = (props) => {
           margin={"0px"}
           fontSize={"14px"}
         >
-          {/* <ResponsiveStream
-            data={data}
-            keys={["Raoul", "Josiane", "Marcel", "René", "Paul", "Jacques"]}
-            margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-            axisTop={null}
-            axisRight={null}
-            axisBottom={{
-              orient: "bottom",
-              tickSize: 5,
-              tickPadding: 5,
-              tickRotation: 0,
-              legend: "",
-              legendOffset: 36,
-            }}
-            axisLeft={{
-              orient: "left",
-              tickSize: 5,
-              tickPadding: 5,
-              tickRotation: 0,
-              legend: "",
-              legendOffset: -40,
-            }}
-            offsetType="silhouette"
-            colors={{ scheme: "nivo" }}
-            fillOpacity={0.85}
-            borderColor={{ theme: "background" }}
-            defs={[
-              {
-                id: "dots",
-                type: "patternDots",
-                background: "inherit",
-                color: "#2c998f",
-                size: 4,
-                padding: 2,
-                stagger: true,
-              },
-              {
-                id: "squares",
-                type: "patternSquares",
-                background: "inherit",
-                color: "#e4c912",
-                size: 6,
-                padding: 2,
-                stagger: true,
-              },
-            ]}
-            fill={[
-              {
-                match: {
-                  id: "Paul",
+          <div className="chart">
+            <ResponsiveStream
+              data={data}
+              keys={["oneStar", "2", "3", "4", "5"]}
+              margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+              axisTop={null}
+              axisRight={null}
+              axisBottom={{
+                orient: "bottom",
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: "",
+                legendOffset: 36,
+              }}
+              axisLeft={{
+                orient: "left",
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: "",
+                legendOffset: -40,
+              }}
+              offsetType="silhouette"
+              colors={{ scheme: "greens" }}
+              fillOpacity={1}
+              borderColor={{ theme: "background" }}
+              defs={[
+                {
+                  id: "dots",
+                  type: "patternDots",
+                  background: "inherit",
+                  color: "#2c998f",
+                  size: 4,
+                  padding: 2,
+                  stagger: true,
                 },
-                id: "dots",
-              },
-              {
-                match: {
-                  id: "Marcel",
+                {
+                  id: "squares",
+                  type: "patternSquares",
+                  background: "inherit",
+                  color: "#e4c912",
+                  size: 6,
+                  padding: 2,
+                  stagger: true,
                 },
-                id: "squares",
-              },
-            ]}
-            dotSize={8}
-            dotColor={{ from: "color" }}
-            dotBorderWidth={2}
-            dotBorderColor={{ from: "color", modifiers: [["darker", 0.7]] }}
-            legends={[
-              {
-                anchor: "bottom-right",
-                direction: "column",
-                translateX: 100,
-                itemWidth: 80,
-                itemHeight: 20,
-                itemTextColor: "#999999",
-                symbolSize: 12,
-                symbolShape: "circle",
-                effects: [
-                  {
-                    on: "hover",
-                    style: {
-                      itemTextColor: "#000000",
-                    },
+              ]}
+              fill={[
+                {
+                  match: {
+                    id: "Paul",
                   },
-                ],
-              },
-            ]}
-          /> */}
+                  id: "dots",
+                },
+                {
+                  match: {
+                    id: "Marcel",
+                  },
+                  id: "squares",
+                },
+              ]}
+              dotSize={8}
+              dotColor={{ from: "color" }}
+              dotBorderWidth={2}
+              dotBorderColor={{ from: "color", modifiers: [["darker", 0.7]] }}
+              legends={[
+                {
+                  anchor: "bottom-right",
+                  direction: "column",
+                  translateX: 100,
+                  itemWidth: 80,
+                  itemHeight: 20,
+                  itemTextColor: "#999999",
+                  symbolSize: 12,
+                  symbolShape: "circle",
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemTextColor: "#000000",
+                      },
+                    },
+                  ],
+                },
+              ]}
+            />
+          </div>
 
           <div
             style={{
@@ -165,6 +215,7 @@ const ClothingAndAccessories = (props) => {
               flexWrap: "wrap",
               padding: "20px",
             }}
+            className="price-range"
           >
             <Range
               values={values}
@@ -231,24 +282,19 @@ const ClothingAndAccessories = (props) => {
                 </div>
               )}
             />
-            <output style={{ marginTop: "30px" }} id="output">
-              {values[0].toFixed(1)} - {values[1].toFixed(1)}
+            <output
+              style={{ marginTop: "30px" }}
+              id="output"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "90%",
+                margin: "20px 0",
+              }}
+            >
+              <div>{values[0]}</div>
+              <div>{values[1]}</div>
             </output>
-          </div>
-        </Card>
-
-        <Card headerLeft={"CUSTOMER RATINGS"} margin={"0px"} fontSize={"14px"}>
-          <div className="card-filter">
-            <Button variant="contained">
-              4.5{" "}
-              <StarIcon
-                style={{
-                  color: "yellow",
-                  fontSize: "20px",
-                  marginLeft: "10px",
-                }}
-              />
-            </Button>
           </div>
         </Card>
       </div>
